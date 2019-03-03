@@ -4,7 +4,9 @@ const dotenv = require('dotenv')
 
 dotenv.config()
 
-const githubApiUrl = 'https://api.github.com/repos/sarahdayan/dinero.js/releases'
+const githubApiUrl =
+  'https://api.github.com/repos/sarahdayan/dinero.js/releases'
+const releasesCache = 'releases.json'
 
 // TODO: Create one from https://github.com/settings/tokens/new without any scope but keep it SECRET (not version control)
 const githubToken = process.env.GITHUB_TOKEN
@@ -12,7 +14,9 @@ if (!githubToken) {
   console.warn('WARNING: No GITHUB_TOKEN set!')
 }
 
-let data = fs.existsSync('releases.json') ? JSON.parse(fs.readFileSync('releases.json')) : { _time: -1 , releases: [{}] }
+let data = fs.existsSync(releasesCache)
+  ? JSON.parse(fs.readFileSync(releasesCache))
+  : { _time: -1, releases: [{}] }
 
 async function getReleases() {
   const now = Date.now()
@@ -22,14 +26,17 @@ async function getReleases() {
     return data
   }
 
-  const releases = await axios.get(githubApiUrl, {
-    headers: {
-      Authorization: githubToken ? `token ${githubToken}` : undefined
-    }
-  })
+  const releases = await axios
+    .get(githubApiUrl, {
+      headers: {
+        Authorization: githubToken ? `token ${githubToken}` : undefined
+      }
+    })
     .then(r => r.data)
     .catch(error => {
-      console.error(`Error while fetching releases. Using old cache! (${error})`)
+      console.error(
+        `Error while fetching releases. Using old cache! (${error})`
+      )
       return data.releases
     })
 
@@ -39,7 +46,7 @@ async function getReleases() {
   }
 
   // Write in background
-  fs.writeFile('releases.json', JSON.stringify(data), () => { })
+  fs.writeFile(releasesCache, JSON.stringify(data), () => {})
 
   return data
 }

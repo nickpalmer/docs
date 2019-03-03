@@ -59,7 +59,11 @@ app.listen(port)
       res.json(releases)
     } catch (error) {
       res.statusCode = 500
-      res.end(JSON.stringify(error.response ? error.response.data : { error: error + '' }))
+      res.end(
+        JSON.stringify(
+          error.response ? error.response.data : { error: error + '' }
+        )
+      )
     }
   })
 })()
