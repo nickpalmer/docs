@@ -1,5 +1,8 @@
 const axios = require('axios')
 const fs = require('fs')
+const dotenv = require('dotenv')
+
+dotenv.config()
 
 const githubApiUrl = 'https://api.github.com/repos/sarahdayan/dinero.js/releases'
 
