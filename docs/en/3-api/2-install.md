@@ -91,6 +91,6 @@ You need at least Node 6 with [full-icu support][node:full-icu].
 [github:dinero:typescript]: https://github.com/sarahdayan/dinero.js/pull/29
 [mdn:intl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
 [caniuse:intl]: https://caniuse.com/#feat=internationalization
-[dinero:to-format]: /api-reference/transformation-and-formatting/to-format/
+[dinero:to-format]: /api/transformation-and-formatting/to-format/
 [node:full-icu]: https://nodejs.org/api/intl.html#intl_embed_the_entire_icu_full_icu
 [definitelytyped]: https://github.com/DefinitelyTyped/DefinitelyTyped

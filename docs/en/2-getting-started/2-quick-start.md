@@ -209,7 +209,7 @@ What we saw is a preview of what you can do. Dinero.js has extensive
 documentation with examples for all its methods.
 
 [npm:dinero]: https://www.npmjs.com/dinero.js
-[dinero:install]: /api-reference/install.html
+[dinero:install]: /api/install
 [jsdelivr:landing]: https://www.jsdelivr.com/package/npm/dinero.js
 [jsdelivr:cdn]: https://cdn.jsdelivr.net/npm/dinero.js/build
 [wiki:iso-4217]: https://en.wikipedia.org/wiki/ISO_4217
