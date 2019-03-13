@@ -1,13 +1,16 @@
 const bluebird = require('bluebird')
-const path = require('path')
 const express = require('express')
+const logger = require('./src/logger/logger')
+const pad = require('pad')
+const path = require('path')
 
-const utils = require('./utils')
-const { getReleases } = require('./releases')
+const utils = require('./src/utils')
+const { getReleases } = require('./src/releases')
 
 const fs = bluebird.promisifyAll(require('fs'))
 const app = express()
 const port = process.env.PORT || 4000
+const baseUrl = `http://localhost:${port}`
 
 app.listen(port)
 ;(async () => {
@@ -23,47 +26,63 @@ app.listen(port)
         .join('/')
     }))
 
-  app.get('/docs', async ({ protocol, headers }, res) => {
-    res.setHeader('Content-Type', 'application/json')
-    return res.send(
-      utils.toPayload(
-        Object.assign(
-          {},
-          ...resources.map(({ route }) => ({
-            [route.substring(1).replace(/([\/-])/gm, '_')]: `${protocol}://${
-              headers.host
-            }${route}`
-          }))
-        )
-      )
-    )
-  })
-
   resources.forEach(route => {
     app.get(route.route, async (req, res) => {
       res.setHeader('Content-Type', 'application/json')
-      return res.send(
-        utils.toPayload({
-          data: utils.parseData(
-            await fs.readFileAsync(route.resource, 'utf8'),
-            path.extname(route.resource).replace('.', '')
-          )
-        })
-      )
+      try {
+        res.send(
+          utils.toPayload({
+            data: utils.parseData(
+              await fs.readFileAsync(route.resource, 'utf8'),
+              path.extname(route.resource).replace('.', '')
+            )
+          })
+        )
+      } catch (err) {
+        res.statusCode = 500
+        res.end(
+          JSON.stringify(err.response ? err.response.data : { error: err + '' })
+        )
+      }
     })
   })
 
-  app.get('/docs/releases', async (req, res) => {
+  app.get('/docs', async ({ protocol, headers }, res) => {
+    res.setHeader('Content-Type', 'application/json')
     try {
-      const releases = await getReleases()
-      res.json(releases)
-    } catch (error) {
+      res.send(
+        utils.toPayload(
+          Object.assign(
+            {},
+            ...resources.map(({ route }) => ({
+              [route.substring(1).replace(/([\/-])/gm, '_')]: `${protocol}://${
+                headers.host
+              }${route}`
+            }))
+          )
+        )
+      )
+    } catch (err) {
       res.statusCode = 500
       res.end(
-        JSON.stringify(
-          error.response ? error.response.data : { error: error + '' }
-        )
+        JSON.stringify(err.response ? err.response.data : { error: err + '' })
       )
     }
   })
+
+  const releases = await getReleases()
+
+  app.get('/docs/releases', async (req, res) => {
+    try {
+      res.json(releases)
+    } catch (err) {
+      res.statusCode = 500
+      res.end(
+        JSON.stringify(err.response ? err.response.data : { error: err + '' })
+      )
+    }
+  })
+
+  logger.info(`${pad('Documentation:', 16)} ${baseUrl}/docs`)
+  logger.info(`${pad('GitHub releases:', 16)} ${baseUrl}/docs/releases`)
 })()
