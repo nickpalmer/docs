@@ -5,24 +5,32 @@ description: |
 examples:
 - title: Compare an object to a another with a greater amount
   code: |
+    ```js
     // returns true
     Dinero({ amount: 500 })
       .lessThan(Dinero({ amount: 800 }))
+    ```
 - title: Compare an object to a another with a lesser amount
   code: |
+    ```js
     // returns false
     Dinero({ amount: 800 })
       .lessThan(Dinero({ amount: 500 }))
+    ```
 - title: Compare an object to a another with a lesser amount but a different precision that normalize to a greater amount
   code: |
+    ```js
     // returns true
     Dinero({ amount: 5000, precision: 3 })
       .lessThan(Dinero({ amount: 800 }))
+    ```
 - title: Compare an object to a another with a greater amount but a different precision that normalize to a lesser amount
   code: |
+    ```js
     // returns false
     Dinero({ amount: 800 })
       .lessThan(Dinero({ amount: 5000, precision: 3 }))
+    ```
 parameters:
 - name: comparator
   type: Dinero

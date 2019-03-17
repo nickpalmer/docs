@@ -12,19 +12,25 @@ description: |
 examples:
 - title: Divide
   code: |
+    ```js
     // returns a Dinero object with amount 100
     Dinero({ amount: 400 })
       .divide(4)
+    ```
 - title: Divide and round with default rounding mode
   code: |
+    ```js
     // returns a Dinero object with amount 52
     Dinero({ amount: 105 })
       .divide(2)
+    ```
 - title: Divide and round with specified rounding mode
   code: |
+    ```js
     // returns a Dinero object with amount 53
     Dinero({ amount: 105 })
       .divide(2, 'HALF_UP')
+    ```
 parameters:
 - name: divisor
   type: number

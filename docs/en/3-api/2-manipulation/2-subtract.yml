@@ -7,14 +7,18 @@ description: |
 examples:
 - title: Subtract
   code: |
+    ```js
     // returns a Dinero object with amount 200
     Dinero({ amount: 400 })
       .subtract(Dinero({ amount: 200 }))
+    ```
 - title: Subtract objects with different precisions
   code: |
+    ```js
     // returns a Dinero object with amount 64545 and precision 4
     Dinero({ amount: 104545, precision: 4 })
       .subtract(Dinero({ amount: 400 }))
+    ```
 parameters:
 - name: subtrahend
   type: Dinero

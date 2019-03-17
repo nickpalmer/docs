@@ -10,19 +10,25 @@ description: |
 examples:
 - title: Multiply
   code: |
+    ```js
     // returns a Dinero object with amount 1600
     Dinero({ amount: 400 })
-      .multiply(4)      
+      .multiply(4)   
+    ```   
 - title: Multiply and round with default rounding mode
   code: |
+    ```js
     // returns a Dinero object with amount 800
     Dinero({ amount: 400 })
-      .multiply(2.001)  
+      .multiply(2.001)
+    ```
 - title: Multiply and round with specified rounding mode
   code: |
+    ```js
     // returns a Dinero object with amount 801
     Dinero({ amount: 400 })
       .multiply(2.00125, 'HALF_UP')
+    ```
 parameters:
 - name: multiplier
   type: number

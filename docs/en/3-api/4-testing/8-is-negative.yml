@@ -5,17 +5,23 @@ description: |
 examples:
 - title: Test an object with a negative amount
   code: |
+    ```js
     // returns true
     Dinero({ amount: -10 })
       .isNegative()
+    ```
 - title: Test an object with a positive amount
   code: |
+    ```js
     // returns false
     Dinero({ amount: 10 })
       .isNegative()
+    ```
 - title: Test an object with an amount equal to zero
   code: |
+    ```js
     // returns false
     Dinero({ amount: 0 })
       .isNegative()
+    ```
 response_type: boolean

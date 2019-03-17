@@ -5,14 +5,18 @@ description: |
 examples:
 - title: Compare an object to a another with the same currency
   code: |
+    ```js
     // returns true
     Dinero({ amount: 2000, currency: 'EUR' })
       .hasSameCurrency(Dinero({ amount: 1000, currency: 'EUR' }))
+    ```
 - title: Compare an object to a another with a different currency
   code: |
+    ```js
     // returns false
     Dinero({ amount: 1000, currency: 'EUR' })
       .hasSameCurrency(Dinero({ amount: 1000, currency: 'USD' }))
+    ```
 parameters:
 - name: comparator
   type: Dinero

@@ -7,14 +7,18 @@ description: |
 examples:
 - title: Add
   code: |
+    ```js
     // returns a Dinero object with amount 600
     Dinero({ amount: 400 })
       .add(Dinero({ amount: 200 }))
+    ```
 - title: Add objects with different precisions
   code: |
+    ```js
     // returns a Dinero object with amount 144545 and precision 4
     Dinero({ amount: 400 })
       .add(Dinero({ amount: 104545, precision: 4 }))
+    ```
 parameters:
 - name: addend
   type: Dinero

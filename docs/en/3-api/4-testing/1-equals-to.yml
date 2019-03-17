@@ -5,34 +5,46 @@ description: |
 examples:
 - title: Compare two objects with same amounts and currencies
   code: |
+    ```js
     // returns true
     Dinero({ amount: 500, currency: 'EUR' })
       .equalsTo(Dinero({ amount: 500, currency: 'EUR' }))
+    ```
 - title: Compare two objects with different amounts
   code: |
+    ```js
     // returns false
     Dinero({ amount: 500, currency: 'EUR' })
       .equalsTo(Dinero({ amount: 800, currency: 'EUR' }))
+    ```
 - title: Compare two objects with different currencies
   code: |
+    ```js
     // returns false
     Dinero({ amount: 500, currency: 'USD' })
       .equalsTo(Dinero({ amount: 500, currency: 'EUR' }))
+    ```
 - title: Compare two objects with different amounts and currencies
   code: |
+    ```js
     // returns false
     Dinero({ amount: 500, currency: 'USD' })
       .equalsTo(Dinero({ amount: 800, currency: 'EUR' }))
+    ```
 - title: Compare two objects with different precisions but normalize to the same amount
   code: |
+    ```js
     // returns true
     Dinero({ amount: 1000, currency: 'EUR', precision: 2 })
       .equalsTo(Dinero({ amount: 10000, currency: 'EUR', precision: 3 }))
+    ```
 - title: Compare two objects with same amount but different precisions that normalize to a different amount
   code: |
+    ```js
     // returns false
     Dinero({ amount: 10000, currency: 'EUR', precision: 2 })
       .equalsTo(Dinero({ amount: 10000, currency: 'EUR', precision: 3 }))
+    ```
 parameters:
 - name: comparator
   type: Dinero

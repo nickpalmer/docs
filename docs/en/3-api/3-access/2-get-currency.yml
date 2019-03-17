@@ -5,7 +5,9 @@ description: |
 examples:
 - title: Get currency
   code: |
+    ```js
     // returns 'EUR'
     Dinero({ currency: 'EUR' })
       .getCurrency()
+    ```
 response_type: String

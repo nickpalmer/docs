@@ -5,7 +5,9 @@ description: |
 examples:
 - title: To object
   code: |
+    ```js
     // returns { amount: 500, currency: 'EUR', precision: 2 }
     Dinero({ amount: 500, currency: 'EUR', precision: 2 })
       .toObject()
+    ```
 response_type: object

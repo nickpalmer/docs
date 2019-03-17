@@ -8,12 +8,16 @@ description: |
 examples:
 - title: Round with default rounding mode
   code: |
+    ```js
     // returns 10.6
     Dinero({ amount: 1055 })
       .toRoundedUnit(1)
+    ```
 - title: Round with specified rounding mode
   code: |
+    ```js
     // returns 10
     Dinero({ amount: 1050 })
       .toRoundedUnit(0, 'HALF_EVEN')
+    ```
 response_type: number

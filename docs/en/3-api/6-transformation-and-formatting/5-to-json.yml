@@ -7,6 +7,8 @@ description: |
 examples:
 - title: To JSON
   code: |
+    ```js
     // returns '{"amount":500,"currency":"EUR","precision":2}'
     JSON.stringify(Dinero({ amount: 500, currency: 'EUR', precision: 2 }))
+    ```
 response_type: object

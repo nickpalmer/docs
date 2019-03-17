@@ -7,9 +7,11 @@ description: |
 examples:
 - title: Percentage
   code: |
+    ```js
     // returns a Dinero object with amount 5000
     Dinero({ amount: 10000 })
       .percentage(50)
+    ```
 parameters:
 - name: percentage
   type: number

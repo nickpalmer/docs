@@ -5,7 +5,9 @@ description: |
 examples:
 - title: Get amount
   code: |
+    ```js
     // returns 500
     Dinero({ amount: 500 })
       .getAmount()
+    ```
 response_type: Number

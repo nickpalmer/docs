@@ -35,30 +35,40 @@ description: |
 examples:
 - title: Format with a mask specifying grouping and currency symbol
   code: |
+    ```js
     // returns $2,000
     Dinero({ amount: 200000 })
       .toFormat('$0,0')
+    ```
 - title: Format with a mask specifying grouping, currency symbol and one fraction digit
   code: |
+    ```js
     // returns €50.5
     Dinero({ amount: 5050, currency: 'EUR' })
       .toFormat('$0,0.0')
+    ```
 - title: Format with a mask specifying grouping and currency name
   code: |
+    ```js
     // returns 100 euros
     Dinero({ amount: 10000, currency: 'EUR' })
       .setLocale('fr-FR')
+    ```
       .toFormat('0,0 dollar')
 - title: Format with default mask
   code: |
+    ```js
     // returns 2000
     Dinero({ amount: 200000, currency: 'EUR' })
       .toFormat()
+    ```
 - title: Format with a mask specifying currency symbol, and specified rounding mode
   code: |
+    ```js
     // returns $10
     Dinero({ amount: 1050 })
       .toFormat('$0', 'HALF_EVEN')
+    ```
 parameters:
 - name: format
   type: string

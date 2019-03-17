@@ -7,12 +7,16 @@ description: |
 examples:
 - title: Test an object with no sub-units
   code: |
+    ```js
     // returns false
     Dinero({ amount: 1100 })
       .hasSubUnits()
+    ```
 - title: Test an object with sub-units
   code: |
+    ```js
     // returns true
     Dinero({ amount: 1150 })
       .hasSubUnits()
+    ```
 response_type: boolean

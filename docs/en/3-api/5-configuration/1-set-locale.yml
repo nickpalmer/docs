@@ -5,9 +5,11 @@ description: |
 examples:
 - title: Set locale
   code: |
+    ```js
     // returns a Dinero object with locale 'ja-JP'
     Dinero()
       .setLocale('ja-JP')
+    ```
 parameters:
 - name: newLocale
   type: string

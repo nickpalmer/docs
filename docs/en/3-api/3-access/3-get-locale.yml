@@ -5,8 +5,10 @@ description: |
 examples:
 - title: Get locale
   code: |
+    ```js
     // returns 'fr-FR'
     Dinero()
       .setLocale('fr-FR')
       .getLocale()
+    ```
 response_type: String

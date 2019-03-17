@@ -5,12 +5,16 @@ description: |
 examples:
 - title: Test an object with an amount equal to zero
   code: |
+    ```js
     // returns true
     Dinero({ amount: 0 })
       .isZero()
+    ```
 - title: Test an object with an amount different from zero
   code: |
+    ```js
     // returns false
     Dinero({ amount: 100 })
       .isZero()
+    ```
 response_type: boolean
