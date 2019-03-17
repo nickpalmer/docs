@@ -15,7 +15,7 @@ Hunt][producthunt:dinerojs] if you use, like, or support the library 🌟🔼�
 
 Selected content about Dinero.js:
 
-- [JSJ 351: Dinero.js with Sarah Dayan][community:jsjabber]
+- [JavaScript Jabber 351: Dinero.js with Sarah Dayan][community:jsjabber]
 - [Build a Shopping Cart with Vue and Dinero.js][community:shoppingcart]
 - [How to Handle Monetary Values in JavaScript][community:monetaryvalues]
 - [Comparison with Numeral.js][community:numeral]
@@ -45,7 +45,11 @@ Dinero.js is under [MIT license][license].
 [numeral]: http://numeraljs.com
 [license]: https://github.com/sarahdayan/dinero.js/blob/master/LICENSE.md
 [github:desandro]: https://github.com/desandro
-[community:jsjabber]: https://devchat.tv/js-jabber/jsj-351-dinero-js-with-sarah-dayan/
-[community:shoppingcart]: https://frontstuff.io/build-a-shopping-cart-with-vue-and-dinerojs
-[community:monetaryvalues]: https://frontstuff.io/how-to-handle-monetary-values-in-javascript
-[community:numeral]: https://www.reddit.com/r/javascript/comments/84mhrw/dinerojs_an_immutable_library_to_create_calculate/
+[community:jsjabber]:
+  https://devchat.tv/js-jabber/jsj-351-dinero-js-with-sarah-dayan/
+[community:shoppingcart]:
+  https://frontstuff.io/build-a-shopping-cart-with-vue-and-dinerojs
+[community:monetaryvalues]:
+  https://frontstuff.io/how-to-handle-monetary-values-in-javascript
+[community:numeral]:
+  https://www.reddit.com/r/javascript/comments/84mhrw/dinerojs_an_immutable_library_to_create_calculate/
