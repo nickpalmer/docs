@@ -1,0 +1,15 @@
+title: Global format
+description: |
+  Sets the global format for new Dinero objects (see [toFormat](/api/transformation-and-formatting/to-format) for format).
+  **This doesn't affect existing instances.**
+affects:
+  - toFormat
+examples:
+- title: Set global format
+  code: |
+    ```js
+    Dinero.globalFormat = '$0.0'
+    
+    Dinero({ amount: 550 })
+      .toFormat() // returns '$5.5'
+    ```

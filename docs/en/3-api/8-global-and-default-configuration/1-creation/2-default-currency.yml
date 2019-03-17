@@ -1,0 +1,14 @@
+title: Default currency
+description: |
+  Sets the default currency for new Dinero objects.
+  **This doesn't affect existing instances.**
+affects:
+  - all methods
+examples:
+- title: Set default currency
+  code: |
+    ```js
+    Dinero.defaultCurrency = 'EUR'
+    
+    Dinero().getCurrency() // returns 'EUR'
+    ```
