@@ -27,7 +27,9 @@ npm install
 
 ### Get a GitHub token
 
-To access the `/docs/releases` endpoint, you need to have access to the GitHub API. You can create GitHub tokens [on your account][github:tokens]. Then, create a `.env` file and add your token as a `GITHUB_TOKEN` environment variable. 
+To access the `/docs/releases` endpoint, you need to have access to the GitHub
+API. You can create GitHub tokens [on your account][github:tokens]. Then, create
+a `.env` file and add your token as a `GITHUB_TOKEN` environment variable.
 
 ### Start server
 
