@@ -28,7 +28,7 @@ module.exports = {
 
     if (now - (await releasesCache).time < 1000 * 60 * 30) {
       logger.echo('Releases cache is fresh, using cache.')
-      return await releasesCache
+      return (await releasesCache).releases
     }
 
     logger.echo('Fetching new releases...')
@@ -42,7 +42,7 @@ module.exports = {
         })).data
       } catch (err) {
         logger.warning('Could not fetch GitHub releases, using cache instead.')
-        return await releasesCache.releases
+        return (await releasesCache).releases
       }
     })()
 
