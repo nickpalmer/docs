@@ -186,7 +186,7 @@ you can specify a precision.
 // represents $10.545
 Dinero({ amount: 10545, precision: 3 })
 
-// The Japanese yen doesn't have sub-units
+// the Japanese yen doesn't have sub-units
 // this represents ¥1
 Dinero({ amount: 1, currency: 'JPY', precision: 0 })
 ```
@@ -195,7 +195,7 @@ If you’re using the same currency more than once, it might be worth setting a
 default precision.
 
 ```js
-// The Iraqi dinar has up to 3 sub-units
+// the Iraqi dinar has up to 3 sub-units
 Dinero.defaultCurrency = 'IQD'
 Dinero.defaultPrecision = 3
 
