@@ -11,4 +11,4 @@ examples:
       .setLocale('fr-FR')
       .getLocale()
     ```
-response_type: String
+response_type: string

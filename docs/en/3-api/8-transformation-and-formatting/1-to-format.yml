@@ -53,8 +53,8 @@ examples:
     // returns 100 euros
     Dinero({ amount: 10000, currency: 'EUR' })
       .setLocale('fr-FR')
-    ```
       .toFormat('0,0 dollar')
+    ```
 - title: Format with default mask
   code: |
     ```js

@@ -10,4 +10,4 @@ examples:
     Dinero({ currency: 'EUR' })
       .getCurrency()
     ```
-response_type: String
+response_type: string

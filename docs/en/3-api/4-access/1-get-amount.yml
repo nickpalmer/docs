@@ -10,4 +10,4 @@ examples:
     Dinero({ amount: 500 })
       .getAmount()
     ```
-response_type: Number
+response_type: number
