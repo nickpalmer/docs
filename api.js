@@ -6,6 +6,7 @@ const path = require('path')
 
 const utils = require('./src/utils')
 const { getReleases } = require('./src/releases')
+const { getBuild } = require('./src/build')
 
 const fs = bluebird.promisifyAll(require('fs'))
 const app = express()
@@ -83,6 +84,20 @@ app.listen(port)
     }
   })
 
-  logger.info(`${pad('Documentation:', 16)} ${baseUrl}/docs`)
-  logger.info(`${pad('GitHub releases:', 16)} ${baseUrl}/docs/releases`)
+  const build = await getBuild()
+
+  app.get('/docs/build', async (req, res) => {
+    try {
+      res.json(build)
+    } catch (err) {
+      res.statusCode = 500
+      res.end(
+        JSON.stringify(err.response ? err.response.data : { error: err + '' })
+      )
+    }
+  })
+
+  logger.info(`${pad('Documentation:', 18)} ${baseUrl}/docs`)
+  logger.info(`${pad('GitHub releases:', 18)} ${baseUrl}/docs/releases`)
+  logger.info(`${pad('Build information:', 18)} ${baseUrl}/docs/build`)
 })()
