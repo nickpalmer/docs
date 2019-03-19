@@ -18,56 +18,7 @@ You can install the library from [npm][npm:dinero], [download the files
 directly][jsdelivr:landing] or use the [jsDelivr content delivery
 network][jsdelivr:cdn].
 
-<div class="overflow-x-auto">
-  <table>
-    <tbody>
-      <tr>
-        <td>
-          UMD
-        </td>
-        <td class="whitespace-no-wrap"><a href="https://cdn.jsdelivr.net/npm/dinero.js@latest/build/umd/dinero.js" target="_blank">Debug <code><span class="text-smaller">52K</span></code></a></td>
-        <td class="whitespace-no-wrap"><a href="https://cdn.jsdelivr.net/npm/dinero.js@latest/build/umd/dinero.min.js" target="_blank">Minified <code><span class="text-smaller">8.2K</span></code></a></td>
-        <td class="whitespace-no-wrap"><a href="https://cdn.jsdelivr.net/npm/dinero.js@latest/build/umd/dinero.polyfilled.min.js" target="_blank">Polyfilled <code><span class="text-smaller">25K</span></code></a></td>
-        <td class="whitespace-no-wrap">
-          <code>&lt;script src="path/to/umd/dinero.js"&gt;&lt;/script&gt;</code>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          CommonJS
-        </td>
-        <td colspan="3" class="whitespace-no-wrap">
-          <code>npm install dinero.js --save</code>
-        </td>
-        <td class="whitespace-no-wrap">
-          <code>const Dinero = require('dinero.js')</code>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          ES module
-        </td>
-        <td class="whitespace-no-wrap"><a href="https://cdn.jsdelivr.net/npm/dinero.js@latest/build/esm/dinero.js" target="_blank">Debug <code><span class="text-smaller">49K</span></code></a></td>
-        <td class="whitespace-no-wrap"><a href="https://cdn.jsdelivr.net/npm/dinero.js@latest/build/esm/dinero.min.js" target="_blank">Minified <code><span class="text-smaller">8.9K</span></code></a></td>
-        <td class="whitespace-no-wrap"><a href="https://cdn.jsdelivr.net/npm/dinero.js@latest/build/esm/dinero.polyfilled.min.js" target="_blank">Polyfilled <code><span class="text-smaller">32K</span></code></a></td>
-        <td class="whitespace-no-wrap">
-          <code>import Dinero from 'path/to/esm/dinero.js'</code>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          AMD
-        </td>
-        <td class="whitespace-no-wrap"><a href="https://cdn.jsdelivr.net/npm/dinero.js@latest/build/amd/dinero.js" target="_blank">Debug <code><span class="text-smaller">52K</span></code></a></td>
-        <td class="whitespace-no-wrap"><a href="https://cdn.jsdelivr.net/npm/dinero.js@latest/build/amd/dinero.min.js" target="_blank">Minified <code><span class="text-smaller">8.1K</span></code></a></td>
-        <td class="whitespace-no-wrap"><a href="https://cdn.jsdelivr.net/npm/dinero.js@latest/build/amd/dinero.polyfilled.min.js" target="_blank">Polyfilled <code><span class="text-smaller">25K</span></code></a></td>
-        <td class="whitespace-no-wrap">
-          <code>requirejs(['path/to/amd/dinero'])</code>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+{{ table }}
 
 For more details, see the [full installation guide][dinero:install].
 
