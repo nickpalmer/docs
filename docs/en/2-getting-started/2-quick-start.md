@@ -1,4 +1,6 @@
-# Quick Start
+---
+title: Quick Start
+---
 
 Dinero.js makes it easy to create, calculate and format monetary values in
 JavaScript. You can perform arithmetic operations on them, parse and format

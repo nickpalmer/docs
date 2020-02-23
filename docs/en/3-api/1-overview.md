@@ -1,4 +1,6 @@
-# Overview
+---
+title: Overview
+---
 
 A Dinero object is an immutable data structure representing a specific monetary value.
 It comes with methods for creating, parsing, manipulating, testing, transforming and formatting them.
