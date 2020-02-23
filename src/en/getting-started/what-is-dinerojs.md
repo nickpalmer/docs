@@ -1,5 +1,6 @@
 ---
 title: What is Dinero.js?
+order: 2
 ---
 
 Dinero.js lets you create, calculate and format monetary values in JavaScript.

@@ -1,5 +1,6 @@
 ---
 title: Installation guide
+order: 4
 ---
 
 Dinero.js provides builds for different environments. You can use it as a browser global with a `<script>` tag (UMD), import it as a native ES module in modern browsers or in projects using a module bundler like Webpack, inject it in projects that support asynchronous modules like Require.js or SystemJS (AMD), or use it with Node.js and any system that supports the CommonJS syntax.

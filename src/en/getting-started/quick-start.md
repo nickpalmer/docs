@@ -1,5 +1,6 @@
 ---
 title: Quick Start
+order: 1
 ---
 
 Dinero.js makes it easy to create, calculate and format monetary values in
