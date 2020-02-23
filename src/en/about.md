@@ -1,6 +1,5 @@
 ---
 title: About
-order: 9999
 ---
 
 ## Contributing
