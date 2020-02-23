@@ -11,7 +11,7 @@
     "lint:md:fix": "./scripts/lint-md-fix"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "bluebird": "^3.5.3",
     "chalk": "^2.4.2",
     "dotenv": "^6.2.0",
