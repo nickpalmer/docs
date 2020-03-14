@@ -34,7 +34,7 @@ To get started, you need to create a new Dinero instance. You specify amounts in
 This represents €50:
 
 ```js
-const price = Dinero({ amount: 5000, currency: 'EUR' })
+const price = Dinero({ amount: 5000, currency: 'EUR' });
 ```
 
 You can add or subtract any amount you want, by passing it another Dinero
@@ -42,17 +42,17 @@ instance:
 
 ```js
 // returns a Dinero object with amount: 5500
-price.add(Dinero({ amount: 500, currency: 'EUR' }))
+price.add(Dinero({ amount: 500, currency: 'EUR' }));
 
 // returns a Dinero object with amount: 4500
-price.subtract(Dinero({ amount: 500, currency: 'EUR' }))
+price.subtract(Dinero({ amount: 500, currency: 'EUR' }));
 ```
 
 Dinero.js is immutable, which means you always get a new Dinero instance when
 you perform any transformation on it. Your original instance remains untouched.
 
 ```js
-price // still returns a Dinero object with amount: 5000
+price; // still returns a Dinero object with amount: 5000
 ```
 
 All transformative operations return a Dinero instance, so you can chain methods
@@ -62,7 +62,7 @@ away as you like:
 // returns a Dinero object with amount: 4000
 Dinero({ amount: 500 })
   .add(Dinero({ amount: 500 }))
-  .multiply(4)
+  .multiply(4);
 ```
 
 **Note:** because method calls execute sequentially, **mathematical operator
@@ -76,13 +76,13 @@ in return:
 
 ```js
 // returns true
-Dinero({ amount: 500 }).equalsTo(Dinero({ amount: 500 }))
+Dinero({ amount: 500 }).equalsTo(Dinero({ amount: 500 }));
 
 // returns false
-Dinero({ amount: 100 }).isZero()
+Dinero({ amount: 100 }).isZero();
 
 // returns true
-Dinero({ amount: 1150 }).hasCents()
+Dinero({ amount: 1150 }).hasCents();
 ```
 
 ## Displaying a Dinero object
@@ -94,7 +94,7 @@ with intuitive `String` masks:
 
 ```js
 // returns $5.00
-Dinero({ amount: 500 }).toFormat('$0,0.00')
+Dinero({ amount: 500 }).toFormat('$0,0.00');
 ```
 
 When you set the locale before you call `toFormat`, you get a display result
@@ -104,17 +104,17 @@ with the proper format:
 // returns 5 000 $US
 Dinero({ amount: 500000 })
   .setLocale('fr-FR')
-  .toFormat('$0,0')
+  .toFormat('$0,0');
 ```
 
 If you don’t want to set the locale all the time, you can also define it
 globally:
 
 ```js
-Dinero.globalLocale = 'de-DE'
+Dinero.globalLocale = 'de-DE';
 
 // returns 5.000 $
-Dinero({ amount: 500000 }).toFormat('$0,0')
+Dinero({ amount: 500000 }).toFormat('$0,0');
 ```
 
 You can still pass a locale to your Dinero instance if you need, to override the
@@ -126,7 +126,7 @@ preserves its locale.
 Dinero({ amount: 500 })
   .setLocale('fr-FR')
   .add(Dinero({ amount: 500 }))
-  .toFormat('$0,0')
+  .toFormat('$0,0');
 ```
 
 ## Handling different precisions
@@ -138,11 +138,11 @@ you can specify a precision.
 
 ```js
 // represents $10.545
-Dinero({ amount: 10545, precision: 3 })
+Dinero({ amount: 10545, precision: 3 });
 
 // the Japanese yen doesn't have sub-units
 // this represents ¥1
-Dinero({ amount: 1, currency: 'JPY', precision: 0 })
+Dinero({ amount: 1, currency: 'JPY', precision: 0 });
 ```
 
 If you’re using the same currency more than once, it might be worth setting a
@@ -150,11 +150,11 @@ default precision.
 
 ```js
 // the Iraqi dinar has up to 3 sub-units
-Dinero.defaultCurrency = 'IQD'
-Dinero.defaultPrecision = 3
+Dinero.defaultCurrency = 'IQD';
+Dinero.defaultPrecision = 3;
 
 // represents IQD1
-Dinero({ amount: 1000 })
+Dinero({ amount: 1000 });
 ```
 
 ## Going further

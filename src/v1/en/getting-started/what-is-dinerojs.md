@@ -16,13 +16,13 @@ It provides:
 - Currency conversion.
 
 ```js
-Dinero.defaultCurrency = 'EUR'
+Dinero.defaultCurrency = 'EUR';
 
 Dinero({ amount: 500 })
   .add(Dinero({ amount: 100 }))
   .multiply(4)
   .setLocale('en-GB')
-  .toFormat('$0,0.0') // returns "€24.0"
+  .toFormat('$0,0.0'); // returns "€24.0"
 ```
 
 **Dinero.js is to money what Moment.js is to dates.**
@@ -50,7 +50,7 @@ is a binary representation of a base 10 system, you end up with inaccurate
 results when you try to do math.
 
 ```js
-0.1 + 0.2 // returns 0.30000000000000004 😧
+0.1 + 0.2; // returns 0.30000000000000004 😧
 ```
 
 **Using floats to store monetary values is a bad idea.** As you calculate more
@@ -94,10 +94,10 @@ const vm = new Vue({
   },
   computed: {
     priceWithTax() {
-      return this.price.add(this.price.percentage(10))
+      return this.price.add(this.price.percentage(10));
     }
   }
-})
+});
 ```
 
 ### Chainability
@@ -111,7 +111,7 @@ Dinero({ amount: 500 })
   .add(Dinero({ amount: 200 }))
   .multiply(4)
   .setLocale('fr-FR')
-  .toFormat() // returns "28,00 US$"
+  .toFormat(); // returns "28,00 US$"
 ```
 
 ### Global settings
@@ -124,8 +124,8 @@ This is where global settings come in handy. Instead of passing them to every
 instance, you can declare options that apply to all new objects.
 
 ```js
-Dinero.globalLocale = 'de-DE'
-Dinero({ amount: 500 }).toFormat() // returns "5,00 $"
+Dinero.globalLocale = 'de-DE';
+Dinero({ amount: 500 }).toFormat(); // returns "5,00 $"
 ```
 
 ### Native Internationalization support
