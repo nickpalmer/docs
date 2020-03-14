@@ -929,7 +929,7 @@ eslint-visitor-keys@^1.1.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.1.0.tgz#e2a82cea84ff246ad6fb57f9bde5b46621459ec2"
   integrity sha512-8y9YjtM1JBJU/A9Kc+SbaOV4y29sSWckBwMHa+FGtVj5gN/sbnKDf6xJUl+8g7FAij9LVaP8C24DUiH/f/2Z9A==
 
-eslint@^6.8.0:
+eslint@6.8.0:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-6.8.0.tgz#62262d6729739f9275723824302fb227c8c93ffb"
   integrity sha512-K+Iayyo2LtyYhDSYwz5D5QdWw0hCacNzyq1Y821Xna2xSJj7cijoLLYmLxTQgcgZ9mC61nryMy9S7GRbYpI5Ig==
@@ -3850,7 +3850,7 @@ textlint-rule-en-capitalization@2.0.2:
     sentence-splitter "^3.0.11"
     textlint-rule-helper "^2.1.1"
 
-textlint-rule-eslint@^3.2.1:
+textlint-rule-eslint@3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/textlint-rule-eslint/-/textlint-rule-eslint-3.2.1.tgz#7d91296664842de7f323ea36530142d847c583e8"
   integrity sha512-HM6OpjC0cVNu1LLa7GsUnFZufVtMZ8eCA9FiBD/vaKo811l+2LDdt9ilxnDLRQiUOjF4NIUZ3c7yAuU4sMa0eA==
