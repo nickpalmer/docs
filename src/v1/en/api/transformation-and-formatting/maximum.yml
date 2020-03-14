@@ -27,5 +27,5 @@ parameters:
 - name: objects
   type: Dinero[]
   required: true
-  description: An array of Dinero objects
+  description: An array of Dinero objects.
 response_type: Dinero

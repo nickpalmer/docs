@@ -4,7 +4,7 @@ description: |
   Sets the default amount for all new Dinero objects (see [Dinero](/api/overview) for format).
   **This doesn't affect existing instances.**
 affects:
-  - all methods
+- name: all methods
 examples:
 - title: Set default amount
   code: |

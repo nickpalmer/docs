@@ -4,9 +4,12 @@ description: |
   Sets the global rounding mode for new Dinero objects (see [multiply](/api/manipulation/multiply) or [divide](/api/manipulation/divide) for format).
   **This doesn't affect existing instances.**
 affects:
-  - multiply
-  - divide
-  - convert
+- name: multiply
+  link: /api/manipulation/multiply
+- name: divide
+  link: /api/manipulation/divide
+- name: convert
+  link: /api/manipulation/convert
 examples:
 - title: Set global rounding mode
   code: |

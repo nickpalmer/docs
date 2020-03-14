@@ -4,7 +4,8 @@ description: |
   Sets the global headers for exchange rates API for new Dinero objects (see [convert](/api/manipulation/convert) for format).
   **This doesn't affect existing instances.**
 affects:
-  - convert
+- name: convert
+  link: /api/manipulation/convert
 examples:
 - title: Set global headers for exchange rates API
   code: |

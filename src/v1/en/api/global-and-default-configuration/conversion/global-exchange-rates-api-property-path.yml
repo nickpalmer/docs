@@ -4,7 +4,8 @@ description: |
   Sets the global property path for exchange rates API for new Dinero objects (see [convert](/api/manipulation/convert) for format).
   **This doesn't affect existing instances.**
 affects:
-  - convert
+- name: convert
+  link: /api/manipulation/convert
 examples:
 - title: Set global property path for exchange rates API
   code: |

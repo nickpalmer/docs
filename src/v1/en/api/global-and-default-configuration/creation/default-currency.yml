@@ -4,7 +4,7 @@ description: |
   Sets the default currency for new Dinero objects.
   **This doesn't affect existing instances.**
 affects:
-  - all methods
+- name: all methods
 examples:
 - title: Set default currency
   code: |

@@ -19,7 +19,9 @@ examples:
       .hasCents()
     ```
 deprecated:
-- version: 1.4.0
-- end: 2.0.0
-- alternative: hasSubUnits
+  version: 1.4.0
+  end: 2.0.0
+  alternative:
+    name: hasSubUnits
+    link: /api/testing/has-sub-units
 response_type: boolean

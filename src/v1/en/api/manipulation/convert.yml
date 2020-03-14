@@ -122,24 +122,20 @@ parameters:
   description: The API endpoint to retrieve exchange rates. You can substitute this with a promise that resolves to the exchanges rates if you already have them.
 - name: options.propertyPath
   type: string
-  default: rates.{{to}}
-  description: The property path to the rate.
-- name: options.propertyPath
-  type: string
-  required: true
+  default_value: rates.{{to}}
   description: The property path to the rate.
 - name: options.headers
   type: object
   description: The HTTP headers to provide, if needed.
 - name: options.roundingMode
   type: string
-  default: HALF_EVEN
+  default_value: HALF_EVEN
   description: The rounding mode to use.
   possible_values:
-  - HALF_ODD
-  - HALF_EVEN
-  - HALF_UP
-  - HALF_DOWN
-  - HALF_TOWARDS_ZERO
-  - HALF_AWAY_FROM_ZERO
+  - 'HALF_ODD'
+  - 'HALF_EVEN'
+  - 'HALF_UP'
+  - 'HALF_DOWN'
+  - 'HALF_TOWARDS_ZERO'
+  - 'HALF_AWAY_FROM_ZERO'
 response_type: Promise

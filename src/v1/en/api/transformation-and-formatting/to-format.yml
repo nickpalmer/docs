@@ -80,10 +80,10 @@ parameters:
   default: HALF_AWAY_FROM_ZERO
   description: The rounding mode to use
   possible_values:
-  - HALF_ODD
-  - HALF_EVEN
-  - HALF_UP
-  - HALF_DOWN
-  - HALF_TOWARDS_ZERO
-  - HALF_AWAY_FROM_ZERO
+  - 'HALF_ODD'
+  - 'HALF_EVEN'
+  - 'HALF_UP'
+  - 'HALF_DOWN'
+  - 'HALF_TOWARDS_ZERO'
+  - 'HALF_AWAY_FROM_ZERO'
 response_type: string

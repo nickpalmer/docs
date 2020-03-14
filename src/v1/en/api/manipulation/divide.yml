@@ -39,13 +39,13 @@ parameters:
   description: The factor to divide by.
 - name: roundingMode
   type: string
-  default: HALF_EVEN
+  default_value: HALF_EVEN
   description: The rounding mode to use.
   possible_values:
-  - HALF_ODD
-  - HALF_EVEN
-  - HALF_UP
-  - HALF_DOWN
-  - HALF_TOWARDS_ZERO
-  - HALF_AWAY_FROM_ZERO
+  - 'HALF_ODD'
+  - 'HALF_EVEN'
+  - 'HALF_UP'
+  - 'HALF_DOWN'
+  - 'HALF_TOWARDS_ZERO'
+  - 'HALF_AWAY_FROM_ZERO'
 response_type: Dinero

@@ -4,7 +4,8 @@ description: |
   Sets the global locale for new Dinero objects (see [setLocale](/api/configuration/set-locale) for format).
   **This doesn't affect existing instances.**
 affects:
-  - getLocale
+- name: getLocale
+  link: /api/access/get-locale
 examples:
 - title: Set global locale
   code: |
