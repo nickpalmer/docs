@@ -5,8 +5,10 @@ remark \
   --quiet \
   --frail \
   ./README.md \
-  ./docs/**/*.md
+  ./src/**/*.md
 
 textlint \
   ./README.md \
-  ./docs/**/*.md \
+  ./src/**/*.md \
+  ./src/**/*.yml \
+  $1

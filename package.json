@@ -9,8 +9,10 @@
   "license": "MIT",
   "author": "Sarah Dayan",
   "scripts": {
-    "lint:md": "./scripts/lint-md",
-    "lint:md:fix": "./scripts/lint-md-fix"
+    "lint:content": "./scripts/lint-content",
+    "lint:content:fix": "./scripts/lint-content --fix",
+    "lint:format": "./scripts/lint-format",
+    "lint:format:fix": "./scripts/lint-format --write"
   },
   "devDependencies": {
     "@textlint-rule/textlint-rule-no-invalid-control-character": "1.2.0",

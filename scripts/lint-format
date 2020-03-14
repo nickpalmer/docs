@@ -4,6 +4,6 @@ set -e
 
 prettier \
   --loglevel error \
-  --write \
   ./README.md \
-  ./docs/**/*.md
+  ./src/**/*.md \
+  $1
