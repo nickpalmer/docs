@@ -1,0 +1,28 @@
+order: 6
+title: Convert precision
+signature: convertPrecision(newPrecision, roundingMode)
+description: |
+  Returns a new Dinero object with a new precision and a converted amount.
+
+  By default, fractional minor currency units are rounded using the **half to even** rule ([banker's rounding](http://wiki.c2.com/?BankersRounding)).
+  This can be necessary when you need to convert objects to a smaller precision.
+
+  Rounding *can* lead to accuracy issues as you chain many times. Consider a minimal amount of subsequent conversions for safer results.
+  You can also specify a different `roundingMode` to better fit your needs.
+examples:
+- title: Convert precision
+  code: |
+    ```js
+    // Returns a Dinero object with precision 3 and amount 1000
+    Dinero({ amount: 100, precision: 2 })
+      .convertPrecision(3)
+    ```
+parameters:
+- name: newPrecision
+  type: number
+  required: true
+  description: The new precision.
+throws:
+- type: TypeError
+  description: If `newPrecision` is invalid.
+response_type: Dinero

@@ -1,0 +1,23 @@
+order: 9
+title: Has sub-units
+signature: hasSubUnits()
+description: |
+  Checks if this has minor currency units.
+
+  Deprecates [hasCents](/api/testing/has-cents).
+examples:
+- title: Test an object with no sub-units
+  code: |
+    ```js
+    // returns false
+    Dinero({ amount: 1100 })
+      .hasSubUnits()
+    ```
+- title: Test an object with sub-units
+  code: |
+    ```js
+    // returns true
+    Dinero({ amount: 1150 })
+      .hasSubUnits()
+    ```
+response_type: boolean

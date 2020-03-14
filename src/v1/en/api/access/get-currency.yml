@@ -1,0 +1,14 @@
+order: 2
+title: Get currency
+signature: getCurrency()
+description: |
+  Returns the currency.
+examples:
+- title: Get currency
+  code: |
+    ```js
+    // returns 'EUR'
+    Dinero({ currency: 'EUR' })
+      .getCurrency()
+    ```
+response_type: string

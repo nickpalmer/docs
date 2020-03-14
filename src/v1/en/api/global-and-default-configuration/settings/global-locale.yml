@@ -1,0 +1,15 @@
+order: 1
+title: Global locale
+description: |
+  Sets the global locale for new Dinero objects (see [setLocale](/api/configuration/set-locale) for format).
+  **This doesn't affect existing instances.**
+affects:
+  - getLocale
+examples:
+- title: Set global locale
+  code: |
+    ```js
+    Dinero.globalLocale = 'fr-FR'
+    
+    Dinero().getLocale() // returns 'fr-FR'
+    ```

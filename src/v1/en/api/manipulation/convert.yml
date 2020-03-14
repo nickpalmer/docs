@@ -1,0 +1,145 @@
+order: 7
+title: Convert
+signature: convert(currency, options)
+description: |
+  Returns a Promise containing a new Dinero object converted to another currency.
+
+  You have two options to provide the exchange rates:
+
+  1. **Use an exchange rate REST API, and let Dinero handle the fetching and conversion.** This is a simple option if you have access to an exchange rate REST API and want Dinero to do the rest.
+  2. **Fetch the exchange rates on your own and provide them directly.** This is useful if you're fetching your rates from somewhere else (a file, a database), use a different protocol or query language than REST (SOAP, GraphQL) or want to fetch rates once and cache them instead of making new requests every time.
+
+  **If you want to use a REST API**, you must provide a third-party endpoint yourself. Dinero doesn't come bundled with an exchange rates endpoint.
+
+  Here are some exchange rate APIs you can use:
+
+  - [Fixer](https://fixer.io)
+  - [Open Exchange Rates](https://openexchangerates.org)
+  - [Coinbase](https://api.coinbase.com/v2/exchange-rates)
+  - More [foreign](https://github.com/toddmotto/public-apis#currency-exchange) and [crypto](https://github.com/toddmotto/public-apis#cryptocurrency) exchange rate APIs.
+
+  **If you want to fetch your own rates and provide them directly**, you need to pass a promise that resolves to the exchanges rates.
+
+  In both cases, you need to specify at least:
+
+  - a **destination currency**: the currency in which you want to convert your Dinero object. You can specify it with `currency`.
+  - an **endpoint**: the API URL to query exchange rates, with parameters, or a promise that resolves to the exchange rates. You can specify it with `options.endpoint`.
+  - a **property path**: the path to access the wanted rate in your API's JSON response (or the custom promise's payload). For example, with a response of:
+
+  ```json
+  {
+    "data": {
+      "base": "USD",
+      "destination": "EUR",
+      "rate": "0.827728919"
+    }
+  }
+  ```
+
+  Then the property path is `'data.rate'`. You can specify it with `options.propertyPath`.
+
+  The base currency (the one of your Dinero object) and the destination currency can be used as "merge tags" with the mustache syntax, respectively `{{from}}` and `{{to}}`.
+  You can use these tags to refer to these values in `options.endpoint` and `options.propertyPath`.
+
+  For example, if you need to specify the base currency as a query parameter, you can do the following:
+
+  ```js
+  {
+    endpoint: 'https://yourexchangerates.api/latest?base={{from}}'
+  }
+  ```
+examples:
+- title: Convert by using global parameters
+  code: |
+    ```js
+    Dinero.globalExchangeRatesApi = { /* ... */ }
+
+    // returns a Promise containing a Dinero object with the destination currency
+    // and the initial amount converted to the new currency.
+    Dinero({ amount: 500 })
+      .convert('EUR')
+    ```
+- title: Convert by passing local parameters
+  code: |
+    ```js
+    // returns a Promise containing a Dinero object
+    Dinero({ amount: 500 })
+      .convert('XBT', {
+        endpoint: 'https://yourexchangerates.api/latest?base={{from}}',
+        propertyPath: 'data.rates.{{to}}',
+        headers: {
+          'user-key': 'xxxxxxxxx'
+        },
+        roundingMode: 'HALF_UP'
+      })
+    ```
+- title: Convert with then/catch
+  code: |
+    ```js
+    Dinero({ amount: 500 })
+      .convert('EUR')
+      .then(dinero => {
+        dinero.getCurrency() // returns 'EUR'
+      })
+      .catch(err => {
+        // handle errors
+      })
+    ```
+- title: Convert with async/await
+  code: |
+    ```js
+    (async () => {
+      const price = await Dinero({ amount: 500 }).convert('EUR')
+      price.getCurrency() // returns 'EUR'
+    })()
+    ```
+- title: Convert with exchange as a custom promise
+  code: |
+    ```js
+    // using the default `propertyPath` format
+    // so you don't have to specify it
+    const rates = {
+      rates: {
+        EUR: 0.81162
+      }
+    }
+
+    Dinero({ amount: 500 })
+      .convert('EUR', {
+        endpoint: new Promise(resolve => resolve(rates))
+      })
+    ```
+parameters:
+- name: currency
+  type: string
+  required: true
+  description: The destination currency, expressed as an [ISO 4217 currency code](https://en.wikipedia.org/wiki/ISO_4217#Active_codes).
+- name: options.endpoint
+  type:
+    - string
+    - promise
+  required: true
+  description: The API endpoint to retrieve exchange rates. You can substitute this with a promise that resolves to the exchanges rates if you already have them.
+- name: options.propertyPath
+  type: string
+  default: rates.{{to}}
+  description: The property path to the rate.
+- name: options.propertyPath
+  type: string
+  required: true
+  description: The property path to the rate.
+- name: options.headers
+  type: object
+  description: The HTTP headers to provide, if needed.
+- name: options.roundingMode
+  type: string
+  default: HALF_EVEN
+  description: The rounding mode to use.
+  possible_values:
+  - HALF_ODD
+  - HALF_EVEN
+  - HALF_UP
+  - HALF_DOWN
+  - HALF_TOWARDS_ZERO
+  - HALF_AWAY_FROM_ZERO
+response_type: Promise

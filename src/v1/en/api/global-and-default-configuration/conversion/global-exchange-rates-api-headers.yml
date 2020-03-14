@@ -1,0 +1,15 @@
+order: 3
+title: Global headers
+description: |
+  Sets the global headers for exchange rates API for new Dinero objects (see [convert](/api/manipulation/convert) for format).
+  **This doesn't affect existing instances.**
+affects:
+  - convert
+examples:
+- title: Set global headers for exchange rates API
+  code: |
+    ```js
+    Dinero.globalExchangeRatesApi.headers = {
+      'user-key': 'xxxxxxxxx'
+    }
+    ```

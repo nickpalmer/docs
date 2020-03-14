@@ -1,0 +1,53 @@
+order: 3
+title: Instantiate a Dinero object
+signature: Dinero(options)
+type: function
+description: |
+  The library exposes a factory function to let you create new Dinero objects.
+  This function isn't a constructor, so you don't need to use the `new` keyword when creating a new instance.
+examples:
+- title: Create a new Dinero object
+  code: |
+    ```js
+    // returns a Dinero object with default values
+    Dinero()
+    ```
+- title: Create a new Dinero object with a specified amount
+  code: |
+    ```js
+    // returns a Dinero object with amount 500
+    Dinero({ amount: 500 })
+    ```
+- title: Create a new Dinero object with a specified amount and currency
+  code: |
+    ```js
+    // returns a Dinero object
+    // with amount 500 and currency 'EUR'
+    Dinero({ amount: 500, currency: 'EUR' })
+    ```
+- title: Create a new Dinero object with a specified amount, currency, and precision
+  code: |
+    ```js
+    // returns a Dinero object
+    // with amount 500, currency 'EUR', and precision 3
+    Dinero({ amount: 1000, currency: 'IQD', precision: 3 })
+    ```
+parameters:
+- name: options.amount	
+  type: number
+  default: 0
+  description: The amount in minor currency units (as an integer).
+- name: options.currency	
+  type: string
+  default: 'USD'
+  description: An [ISO 4217 currency code](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) currency code.
+- name: options.precision	
+  type: number
+  default: 2
+  description: The number of decimal places to represent.
+throws:
+- type: TypeError
+  description: If `amount` is invalid (not a number and not an integer).
+- type: TypeError
+  description: If `precision` is invalid.
+response_type: Dinero

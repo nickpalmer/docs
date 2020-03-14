@@ -1,0 +1,13 @@
+order: 2
+title: Global property path
+description: |
+  Sets the global property path for exchange rates API for new Dinero objects (see [convert](/api/manipulation/convert) for format).
+  **This doesn't affect existing instances.**
+affects:
+  - convert
+examples:
+- title: Set global property path for exchange rates API
+  code: |
+    ```js
+    Dinero.globalExchangeRatesApi.propertyPath = 'data.rates.{{to}}'
+    ```

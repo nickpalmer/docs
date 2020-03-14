@@ -1,0 +1,18 @@
+order: 4
+title: Global format rounding mode
+description: |
+  Sets the global format rounding mode for new Dinero objects (see [toFormat](/api/transformation-and-formatting/to-format) or [toRoundedUnit](/api/transformation-and-formatting/to-rounded-unit) for format).
+  **This doesn't affect existing instances.**
+affects:
+  - convertPrecision
+  - toFormat
+  - toRoundedUnit
+examples:
+- title: Set global format rounding mode
+  code: |
+    ```js
+    Dinero.globalFormatRoundingMode = 'HALF_EVEN'
+    
+    Dinero({ amount: 1050 })
+      .toFormat('$0') // returns '$10'
+    ```

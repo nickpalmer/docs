@@ -1,0 +1,15 @@
+order: 3
+title: Default precision
+description: |
+  Sets the default precision for new Dinero objects.
+  **This doesn't affect existing instances.**
+affects:
+  - all methods
+examples:
+- title: Set default precision
+  code: |
+    ```js
+    Dinero.defaultPrecision = 3
+    
+    Dinero().getPrecision() // returns 3
+    ```
