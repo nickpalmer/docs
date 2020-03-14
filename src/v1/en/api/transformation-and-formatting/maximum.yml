@@ -1,0 +1,31 @@
+order: 8
+title: Maximum
+signature: maximum(objects)
+static: true
+description: |
+  Returns the biggest Dinero object from an array of Dinero objects.
+examples:
+- title: Get the biggest Dinero object
+  code: |
+    ```js
+    // returns the Dinero object with amount 100
+    Dinero.maximum([
+      Dinero({ amount: 100 }),
+      Dinero({ amount: 50 })
+    ])
+    ```
+- title: Get the biggest Dinero object from objects with different precisions
+  code: |
+    ```js
+    // returns the Dinero object with amount 20
+    Dinero.maximum([
+      Dinero({ amount: 20, precision: 2 }),
+      Dinero({ amount: 150, precision: 3 })
+    ])
+    ```
+parameters:
+- name: objects
+  type: Dinero[]
+  required: true
+  description: An array of Dinero objects
+response_type: Dinero

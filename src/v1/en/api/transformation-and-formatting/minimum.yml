@@ -1,0 +1,31 @@
+order: 8
+title: Minimum
+signature: minimum(objects)
+static: true
+description: |
+  Returns the smallest Dinero object from an array of Dinero objects.
+examples:
+- title: Get the smallest Dinero object
+  code: |
+    ```js
+    // returns the Dinero object with amount 50
+    Dinero.minimum([
+      Dinero({ amount: 50 }),
+      Dinero({ amount: 100 })
+    ])
+    ```
+- title: Get the smallest Dinero object from objects with different precisions
+  code: |
+    ```js
+    // returns the Dinero object with amount 500
+    Dinero.minimum([
+      Dinero({ amount: 500, precision: 3 }),
+      Dinero({ amount: 100, precision: 2 })
+    ])
+    ```
+parameters:
+- name: objects
+  type: Dinero[]
+  required: true
+  description: An array of Dinero objects
+response_type: Dinero
