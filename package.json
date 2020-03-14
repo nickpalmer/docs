@@ -12,7 +12,9 @@
     "lint:content": "./scripts/lint-content",
     "lint:content:fix": "./scripts/lint-content --fix",
     "lint:format": "./scripts/lint-format",
-    "lint:format:fix": "./scripts/lint-format --write"
+    "lint:format:fix": "./scripts/lint-format --write",
+    "lint": "yarn lint:format && yarn lint:content",
+    "lint:fix": "yarn lint:format:fix && yarn lint:content:fix"
   },
   "devDependencies": {
     "@textlint-rule/textlint-rule-no-invalid-control-character": "1.2.0",
