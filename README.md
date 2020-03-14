@@ -2,6 +2,9 @@
 
 This is where the documentation files of Dinero.js live.
 
+> **NOTE:** this repository isn’t currently being used. The documentation is
+> still generated from code comments in the [Dinero.js project][github:dinero].
+
 ## Install
 
 ### Clone repository
@@ -25,7 +28,8 @@ yarn install
 All documentation files live under `src/`. Each language has its own
 sub-directory.
 
-You can lint your content contributions by running `yarn lint:md`, and autofix
-the ones that can with `yarn lint:md:fix`.
+You can lint your content contributions by running `yarn lint`, and autofix the
+ones that can with `yarn lint:fix`.
 
+[github:dinero]: https://github.com/dinerojs/dinero.js
 [yarn]: https://yarnpkg.com/
