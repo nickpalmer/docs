@@ -3,7 +3,7 @@
     "@textlint-rule/no-unmatched-pair": true,
     "@textlint-rule/no-invalid-control-character": true,
     "alex": {
-      allow: ["remains", "execute", "executed", "german"],
+      allow: ["remains", "execute", "executed", "german", "japanese"],
     },
     "apostrophe": true,
     "common-misspellings": true,
@@ -25,6 +25,9 @@
     "write-good": {
       "passive": true,
       "severity": "warning"
+    },
+    "eslint": {
+      "configFile": ".eslintrc.js"
     }
   }
 }
