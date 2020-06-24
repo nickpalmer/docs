@@ -1,0 +1,22 @@
+order: 1
+title: Global endpointFactory
+description: |
+  Sets the global endpointFactory for exchange rates API for new Dinero objects, which takes from and to currencies and returns a Promise (see [convert](/api/manipulation/convert) for more information). endpointFactory takes precedence over endpoint if both are set.
+  **This doesn't affect existing instances.**
+affects:
+- name: convert
+  link: /api/manipulation/convert
+examples:
+- title: Set global endpointFactory used by convert
+  code: |
+    ```js
+    const globalRates = {
+      rates: {
+        EUR: 0.81162
+      }
+    }
+
+    Dinero.globalExchangeRatesApi.endpointFactory = (from, to) => new Promise(
+      resolve => resolve(globalRates)
+    )
+    ```

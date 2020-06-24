@@ -18,12 +18,14 @@ description: |
   - [Coinbase](https://api.coinbase.com/v2/exchange-rates)
   - More [foreign](https://github.com/toddmotto/public-apis#currency-exchange) and [crypto](https://github.com/toddmotto/public-apis#cryptocurrency) exchange rate APIs.
 
-  **If you want to fetch your own rates and provide them directly**, you need to pass a promise that resolves to the exchanges rates.
+  **If you want to fetch your own rates and provide them directly**, you need to pass a promise that resolves to the exchanges rates to endpoint, or a function which returns a promise to endpointFactory. If you specify both endpoint and endpointFactory then endpointFactory is used.
 
   In both cases, you need to specify at least:
 
   - a **destination currency**: the currency in which you want to convert your Dinero object. You can specify it with `currency`.
-  - an **endpoint**: the API URL to query exchange rates, with parameters, or a promise that resolves to the exchange rates. You can specify it with `options.endpoint`.
+  - one of:
+      - an **endpoint**: the API URL to query exchange rates, with parameters, or a promise that resolves to the exchange rates. You can specify it with `options.endpoint`.
+      - an **endpointFactory**: a function which receives from and to currencies and returns a promise which resolves to the exchange rates.
   - a **property path**: the path to access the wanted rate in your API's JSON response (or the custom promise's payload). For example, with a response of:
 
   ```json
@@ -48,6 +50,13 @@ description: |
     endpoint: 'https://yourexchangerates.api/latest?base={{from}}'
   }
   ```
+
+  ```js
+  {
+    endpointFactory: (from, to) => fetch(`https://yourexchangerates.api/latest?base=${from}`)
+  }
+  ```
+
 examples:
 - title: Convert by using global parameters
   code: |
@@ -109,6 +118,24 @@ examples:
         endpoint: new Promise(resolve => resolve(rates))
       })
     ```
+
+- title: Convert with exchangeFactory
+  code: |
+    ```js
+    // using the default `propertyPath` format
+    // so you don't have to specify it
+    const rates = {
+      rates: {
+        EUR: 0.81162
+      }
+    }
+
+    Dinero({ amount: 500 })
+      .convert('EUR', {
+        endpointFactory: (from, to) => new Promise(resolve => resolve(rates))
+      })
+    ```
+
 parameters:
 - name: currency
   type: string
@@ -120,6 +147,11 @@ parameters:
     - promise
   required: true
   description: The API endpoint to retrieve exchange rates. You can substitute this with a promise that resolves to the exchanges rates if you already have them.
+- name: options.endpointFactory
+  type:
+    - function
+  required: false
+  description: A function which can retrieve exchange rates using the passed from and to currencies and returns a promise which resolves to the rates
 - name: options.propertyPath
   type: string
   default_value: rates.{{to}}
