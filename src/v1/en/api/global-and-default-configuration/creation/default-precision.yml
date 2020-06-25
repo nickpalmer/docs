@@ -6,10 +6,40 @@ description: |
 affects:
 - name: all methods
 examples:
-- title: Set default precision
+- title: Set default precision to a number
   code: |
     ```js
     Dinero.defaultPrecision = 3
-    
+
     Dinero().getPrecision() // returns 3
+    ```
+- title: Set default precision to a function
+  code: |
+    ```js
+    Dinero.defaultPrecision = (currency) => {
+      switch (currency) {
+        case 'BHD':
+        case 'IQD':
+        case 'JOD':
+          return 3
+        case 'BIF':
+        case 'BYR':
+        case 'CLP':
+        case 'DJF':
+        case 'GNF':
+        case 'GWP':
+        case 'JPY':
+        case 'MGA':
+        case 'PYG':
+        case 'RWF':
+        case 'VND':
+        case 'VUV':
+        case 'XOF':
+        case 'XPF':
+          return 0
+      }
+      return 2
+    }
+
+    Dinero({ currency: 'BHD' }).getPrecision() // returns 3
     ```
