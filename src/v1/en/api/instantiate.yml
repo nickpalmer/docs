@@ -32,19 +32,48 @@ examples:
     // with amount 500, currency 'EUR', and precision 3
     Dinero({ amount: 1000, currency: 'IQD', precision: 3 })
     ```
+- title: Create a new Dinero object with a specified unit and currency
+  code: |
+    ```js
+    // returns a Dinero object
+    // with amount 500 and currency 'EUR'
+    Dinero({ unit: 5.00, currency: 'EUR' })
+    ```
+- title: Create a new Dinero object with a specified unit and precision
+  code: |
+    ```js
+    // returns a Dinero object
+    // with amount 5050 and precision 3
+    Dinero({ unit: 5.050, precision: 3 })
+    ```
+- title: Create a new Dinero object with a specified unit, rounding the way requested
+  code: |
+    ```js
+    // returns a Dinero object
+    // with amount 106
+    Dinero({ unit: 1.055, roundingMode: 'HALF_UP' });
+    ```
 parameters:
-- name: options.amount	
+- name: options.amount
   type: number
   default: 0
   description: The amount in minor currency units (as an integer).
-- name: options.currency	
+- name: options.unit
+  type: number
+  default: 0
+  description: The amount expressed in units. If an amount is also given this is ignored. The units are converted to amount using precision and roundingMode
+- name: options.currency
   type: string
   default: 'USD'
   description: An [ISO 4217 currency code](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) currency code.
-- name: options.precision	
+- name: options.precision
   type: number
   default: 2
   description: The number of decimal places to represent.
+- name: options.roundingMode
+  type: string 'HALF_ODD', 'HALF_EVEN', 'HALF_UP', 'HALF_DOWN', 'HALF_TOWARDS_ZERO', 'HALF_AWAY_FROM_ZERO' or 'DOWN'
+  default: 'HALF_EVEN'
+  description: Only used when unit is provided for rounding unit into amount. It is not stored with the Dinero.
 throws:
 - type: TypeError
   description: If `amount` is invalid (not a number and not an integer).
