@@ -1,0 +1,16 @@
+order: 1
+title: To string
+signature: toString()
+description: |
+  Returns this object formatted as a string.
+
+  [toFormat](/api/transformation-and-formatting/to-format) wraps around [toFormat](/api/transformation-and-formatting/to-format) and uses the global options
+
+examples:
+- title: Convert to a string
+  code: |
+    ```js
+    // returns $2,000
+    Dinero({ amount: 200000 })
+      .toString()
+    ```

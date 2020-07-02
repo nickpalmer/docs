@@ -37,7 +37,7 @@ Here’s an overview of the public API:
   [hasSameCurrency][dinero:has-same-currency] and
   [hasSameAmount][dinero:has-same-amount].
 - **Configuration:** [setLocale][dinero:set-locale].
-- **Transformation & formatting:** [toFormat][dinero:to-format],
+- **Transformation & formatting:** [toFormat][dinero:to-format], [toString][dinero:to-string],
   [toUnit][dinero:to-unit], [toRoundedUnit][dinero:to-rounded-unit],
   [toObject][dinero:to-object], [toJSON][dinero:to-json],
   [convertPrecision][dinero:convert-precision] and
@@ -86,6 +86,7 @@ created Dinero objects:
 [dinero:has-same-amount]: /api/testing/has-same-amount/
 [dinero:set-locale]: /api/configuration/set-locale/
 [dinero:to-format]: /api/transformation-and-formatting/to-format/
+[dinero:to-string]: /api/transformation-and-formatting/to-string/
 [dinero:to-unit]: /api/transformation-and-formatting/to-unit/
 [dinero:to-rounded-unit]: /api/transformation-and-formatting/to-rounded-unit/
 [dinero:to-object]: /api/transformation-and-formatting/to-object/
